@@ -8,7 +8,7 @@ Make xonsh load custom files by sourcing `~/.xsh/.rc` in the default ~/.xonshrc
 
 ```sh
 mkdir -p ~/.xsh && touch ~/.xsh/.rc
-source ~/.xsh/.rc > ~/.xonshrc
+echo 'source ~/.xsh/.rc' > ~/.xonshrc
 ```
 
 Add `.rc` from this repository
