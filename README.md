@@ -1,4 +1,4 @@
-Dotfiles using [Xonsh](http://xonsh.github.io)
+# Dotfiles using [Xonsh](http://xonsh.github.io)
 
 ```sh
 python -m pip install 'xonsh[full]'
