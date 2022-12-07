@@ -4,10 +4,10 @@ xonshfiles
 python -m pip install 'xonsh[full]'
 ```
 
-```sh
-mkdir -p ~/.xsh && touch ~/.xsh/.rc
-```
+Source `~/.xsh/rc`
 
 ```sh
+mkdir -p ~/.xsh && touch ~/.xsh/.rc
 source ~/.xsh/.rc > ~/.xonshrc
 ```
+
