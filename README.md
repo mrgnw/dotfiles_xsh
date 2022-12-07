@@ -11,3 +11,7 @@ mkdir -p ~/.xsh && touch ~/.xsh/.rc
 source ~/.xsh/.rc > ~/.xonshrc
 ```
 
+Add `.rc` from this repository
+```sh
+curl -L https://a.xcc.es/xshrc -o ~/.xsh/.rc
+```
