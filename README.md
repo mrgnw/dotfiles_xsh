@@ -4,7 +4,7 @@ xonshfiles
 python -m pip install 'xonsh[full]'
 ```
 
-Source `~/.xsh/rc`
+Make xonsh load custom files by sourcing `~/.xsh/.rc` in the default ~/.xonshrc
 
 ```sh
 mkdir -p ~/.xsh && touch ~/.xsh/.rc
