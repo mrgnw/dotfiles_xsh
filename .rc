@@ -2,6 +2,7 @@
 
 $LANG='en_US.utf8';
 
+$X='~/.xsh'
 def scan_xsh():
     source @([p for p in p'$X'.glob('*.xsh')])
 
