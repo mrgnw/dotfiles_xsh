@@ -9,22 +9,30 @@ def scan_xsh():
 $GOPATH='~/.golang'
 $BUN_INSTALL='~/.bun'
 aliases['python'] = 'python3.11'
+aliases['pip'] = 'pip3.11'
 $PY_BASE=$(python -m site --user-base)
 
 aliases |= { 
     'b': 'brew',
+    'dc': 'docker-compose',
+    'up': 'docker-compose up',
     'g': 'git',
     'gits': 'git status',
     'o': 'open .',
-    # 'zd': '~/.zsh',
     'zed': '$EDITOR $Z',
+    'xed': '$EDITOR $X',
 
     'xonc': 'xonsh -c',
     'spanso': 'espanso edit',
 
-    'python': 'python3.11',
+    'py': 'python',
+    'p+': 'pip install',
+    'p-': 'pip uninstall',
+
     'ts': 'tailscale',
     'd': 'duckdb',
+    'dl': 'aria2c',
+    'y': 'yt-dlp',
 
     'disks': 'duf -only local,fuse',
     
@@ -39,13 +47,18 @@ aliases |= {
     'jupy': 'jupyter notebook',
 
     '$': '',
+    '❯': '',
+    
 }
+
 
 thingies=[
     'sh',
     'abbrevs',
-    'homebrew'
-    ]
+    'homebrew',
+    'zoxide',
+]
+# xpip install $@(thingies)
 xontrib load @(thingies)
 
 $PROMPT = '{env_name}{BOLD_GREEN}{user}{BOLD_BLUE} {cwd_base}{branch_color}{curr_branch: {}}{RESET} {RED}{last_return_code_if_nonzero:[{BOLD_INTENSE_RED}{}{RED}] }{RESET}{BOLD_YELLOW}❯{RESET} '
