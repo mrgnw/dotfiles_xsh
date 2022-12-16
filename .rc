@@ -4,7 +4,8 @@ $LANG='en_US.utf8';
 
 $X='~/.xsh'
 def scan_xsh():
-    source @([p for p in p'$X'.glob('*.xsh')])
+    files = [p for p in p'$X'.glob('*.xsh')]
+    source @(files)
 
 $GOPATH='~/.golang'
 $BUN_INSTALL='~/.bun'
@@ -12,45 +13,19 @@ aliases['python'] = 'python3.11'
 aliases['pip'] = 'pip3.11'
 $PY_BASE=$(python -m site --user-base)
 
-aliases |= { 
-    'b': 'brew',
-    'dc': 'docker-compose',
-    'up': 'docker-compose up',
-    'g': 'git',
-    'gits': 'git status',
-    'o': 'open .',
+aliases |= {
     'zed': '$EDITOR $Z',
     'xed': '$EDITOR $X',
-
     'xonc': 'xonsh -c',
-    'spanso': 'espanso edit',
-
-    'py': 'python',
-    'p+': 'pip install',
-    'p-': 'pip uninstall',
-
-    'ts': 'tailscale',
-    'd': 'duckdb',
-    'dl': 'aria2c',
-    'y': 'yt-dlp',
-
-    'disks': 'duf -only local,fuse',
-    
+    'disks': 'duf -only local,fuse',  
     '..': 'cd ..',
     'ls': 'ls -h',
     'la': 'ls -lah',
-
-    # 'ttl: 'sudo sysctl net.inet.ip.ttl=65',
-
-    'flushdns': 'dscacheutil -flushcache',
+    'ttl': 'sudo sysctl net.inet.ip.ttl=65',
     'csv': 'xls',
-    'jupy': 'jupyter notebook',
-
     '$': '',
-    '❯': '',
-    
+    '❯': '',   
 }
-
 
 thingies=[
     'sh',
@@ -61,6 +36,24 @@ thingies=[
 # xpip install $@(thingies)
 xontrib load @(thingies)
 
-$PROMPT = '{env_name}{BOLD_GREEN}{user}{BOLD_BLUE} {cwd_base}{branch_color}{curr_branch: {}}{RESET} {RED}{last_return_code_if_nonzero:[{BOLD_INTENSE_RED}{}{RED}] }{RESET}{BOLD_YELLOW}❯{RESET} '
+abbrevs |= {
+     'b': 'brew',
+     'd': 'duckdb',
+    'dc': 'docker-compose',
+    'up': 'docker-compose up',
+    'dl': 'aria2c',
+     'g': 'git',
+    'gs': 'git status',
+     'o': 'open .',
+    'py': 'python',
+    'p+': 'pip install',
+    'p-': 'pip uninstall',
+    'ts': 'tailscale',
+    'xw': 'xontrib web',
+     'y': 'yt-dlp',
+
+    'spanso': 'espanso edit',
+    'flush': 'dscacheutil -flushcache',
+}
 
 scan_xsh()
