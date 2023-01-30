@@ -4,8 +4,8 @@ $LANG='en_US.utf8';
 
 $X='~/.xsh'
 def scan_xsh():
-    files = [p for p in p'$X'.glob('*.xsh')]
-    source @(files)
+	files = [p for p in p'$X'.glob('*.xsh')]
+	source @(files)
 
 $GOPATH='~/.golang'
 $BUN_INSTALL='~/.bun'
@@ -14,48 +14,47 @@ aliases['pip'] = 'pip3.11'
 $PY_BASE=$(python -m site --user-base)
 
 aliases |= {
-    'zed': '$EDITOR $Z',
-    'xed': '$EDITOR $X',
-    '..': 'cd ..',
-    'ls': 'ls -h',
-    'la': 'ls -lah',
-    'csv': 'xls',
-    '$': '',
-    '❯': '',   
+	'zed': '$EDITOR $Z',
+	'xed': '$EDITOR $X',
+	'..' : 'cd ..',
+	'la' : 'ls -lah',
+	'csv': 'xls',
+	'$'  : '',
+	'❯'  : '',
 }
 
-thingies=[
-    'sh',
-    'abbrevs',
-    'homebrew',
-    'zoxide',
+xpkgs=[
+	'sh',
+	'abbrevs',
+	'homebrew',
+	'zoxide',
 ]
-# xpip install $@(thingies)
-xontrib load @(thingies)
+# xpip install $@(xpkgs)
+xontrib load @(xpkgs)
 
 abbrevs |= {
-     'b': 'brew',
-     'd': 'duckdb',
-    'dc': 'docker-compose',
-    'up': 'docker-compose up',
- 'disks': 'duf -only local,fuse',
-    'dl': 'aria2c',
-     'g': 'git',
-    'gs': 'git status',
-  'jupy': 'jupyter notebook',
-     'o': 'open .',
-    'py': 'python',
-    'p+': 'pip install',
-    'p-': 'pip uninstall',
-    'lz': 'lazy docker',
-    'ts': 'tailscale',
-   'ttl': 'sudo sysctl net.inet.ip.ttl=65',
-  'xonc': 'xonsh -c',
-    'xw': 'xontrib web',
-     'y': 'yt-dlp',
-
-    'spanso': 'espanso edit',
-    'flush': 'dscacheutil -flushcache',
+	'b'    : 'brew',
+	'cfd'  : 'docker-compose',
+	'd'    : 'duckdb',
+	'dc'   : 'docker-compose',
+	'up'   : 'docker-compose up',
+	'disks': 'duf -only local,fuse',
+	'dl'   : 'aria2c',
+	'g'    : 'git',
+	'gs'   : 'git status',
+	'jupy' : 'jupyter notebook',
+	'o'    : 'open .',
+	'py'   : 'python',
+	'p+'   : 'pip install',
+	'p-'   : 'pip uninstall',
+	'lz'   : 'lazy docker',
+	'ts'   : 'tailscale',
+	'ttl'  : 'sudo sysctl net.inet.ip.ttl=65',
+	'xonc' : 'xonsh -c',
+	'xw'   : 'xontrib web',
+	'y'    : 'yt-dlp',
+	'spanso': 'espanso edit',
+	'flush' : 'dscacheutil -flushcache',
 }
 
 scan_xsh()
