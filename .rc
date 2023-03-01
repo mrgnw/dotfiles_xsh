@@ -17,6 +17,8 @@ aliases |= {
 	'zed': '$EDITOR $Z',
 	'xed': '$EDITOR $X',
 	'..' : 'cd ..',
+    '+d' : 'mkdir -p $arg0; cd $arg0',
+	'h'  : 'tldr "$arg0" or man "$arg0" or "$arg0" --help or "$arg0" -h',
 	'la' : 'ls -lah',
 	'csv': 'xls',
 	'$'  : '',
