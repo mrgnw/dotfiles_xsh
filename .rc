@@ -11,7 +11,7 @@ $GOPATH='~/.golang'
 $BUN_INSTALL='~/.bun'
 aliases['python'] = 'python3.11'
 aliases['pip'] = 'pip3.11'
-$PY_BASE=$(python -m site --user-base)
+$PY_BASE=$(python3 -m site --user-base)
 
 aliases |= {
 	'zed': '$EDITOR $Z',
@@ -29,7 +29,7 @@ xpkgs=[
 	'sh',
 	'abbrevs',
 	'homebrew',
-	'zoxide',
+	# 'zoxide',
 ]
 # xpip install $@(xpkgs)
 xontrib load @(xpkgs)
